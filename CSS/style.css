@@ -1,0 +1,16 @@
+/* Elemen selector */
+/* Referensi web colorhunt.co */
+body {
+    background-color: #FFFBF1;
+    color: darkred;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    text-align: center;
+}
+.txt-center{text-align: center;}
+.bg-warning{background-color: brown; border-radius: 24px 24px 24px 24px;}
+.txt-white{color: #FFFBF1;}
+.p-1 {padding: 50px;}
+.m-1{margin: 100px;}
+.f-1{font-size: 20px;}
