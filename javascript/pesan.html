@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Saran dan Keriktik</h1>
+    <input type="text" id="nama" placeholder="Masukkan Nama Anda ..." />
+
+    <!-- Tambah Input saran -->
+    <input type="text" id="saran" placeholder="Masukkan Saran Anda ..." />
+    <button onclick="kirim()">kirim</button>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th scope="col">Nama</th>
+          <th scope="col">Saran</th>
+        </tr>
+      </thead>
+      <tbody id="List-Pesan"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
