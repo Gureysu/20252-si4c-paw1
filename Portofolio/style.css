@@ -1,0 +1,195 @@
+/* 1. global / reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* 2. navbar */
+.navbar {
+  transition: background-color 0.3 ease;
+  padding: 16px 0;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  margin-left: 8px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* 3. section home(hero) */
+#home h1 {
+  font-size: 3grem;
+  line-height: 1.2;
+}
+
+#home p.lead {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+#home .btn {
+  padding: 12px 32px;
+  font-weight: 600;
+  border-radius: 50px;
+  transition:
+    transform 0.2s ease,
+    box-shodow 0.2s ease;
+}
+
+#home .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+}
+
+/* 4. section titles (judul tiap section) */
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* garis kuning dibawah judul */
+section h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50);
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background-color: #ffc107;
+  border-radius: 2px;
+}
+
+.text-center h2 {
+  display: block;
+}
+
+/* 5. section about */
+#about {
+  background-color: #fff;
+}
+
+#about p.lead {
+  color: #555;
+  line-height: 1.8;
+}
+
+/* 6. Section skills */
+#sklills {
+  background-color: #f8f9fa;
+}
+
+#skills.card {
+  border: none;
+  border-radius: 16px;
+  transition:
+    transform 0.3s ease,
+    box-shodow 0.3s ease;
+  cursor: default;
+}
+
+#skills .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0n n12px 30px rgba(0, 0, 0.12);
+}
+
+#skills .fs-1 {
+  font-size: 2.5rem !important;
+}
+
+/* ===== 7. SECTION PROJECTS ===== */
+#projects {
+  background-color: #fff;
+}
+
+#projects .card {
+  border: none;
+  border-radius: 16px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-left: 4px solid #ffc107;
+  /* garis kuning di kiri card */
+}
+
+#projects .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+#projects .card-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+#projects .card-text {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+#projects .btn-outline-dark {
+  border-radius: 50px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+#projects .btn-outline-dark:hover {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #000;
+}
+
+/* ===== 8. SECTION CONTACT ===== */
+#contact {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+}
+
+#contact .btn {
+  border-radius: 50px;
+  padding: 10px 28px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+#contact .btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== 9. FOOTER ===== */
+footer {
+  background-color: #000;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* ===== 10. RESPONSIF (layar kecil / HP) ===== */
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 2rem;
+  }
+
+  #home p.lead {
+    font-size: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+}
