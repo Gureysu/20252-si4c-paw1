@@ -1,8 +1,8 @@
 // 1 typing effect
-const text = [
+const texts = [
   "Web Developer 💻",
   "UI/UX Enthusiast 🎨",
-  "Mahasiswa Informatika 🎓",
+  "Mahasiswa Sistem Informasi 🎓",
   "Open to Collaboration 🤝",
 ];
 
@@ -16,7 +16,7 @@ function typeEffect() {
 
   if (!display) return;
 
-  if (!deleting) {
+  if (isDeleting) {
     display.textContent = current.substring(0, charIndex - 1);
     charIndex--;
   } else {
@@ -91,7 +91,7 @@ document.head.appendChild(style);
 
 // Pilih semua elemen yang mau diberi animasi
 const animatedEls = document.querySelectorAll(
-  "#about p, #skills .card, #projects .card, #contact .btn",
+  "#about p, #skills .card, #project .card, #contact .btn",
 );
 
 // Tambahkan class fade-up ke semua elemen tersebut

@@ -16,7 +16,7 @@ body {
 
 /* 2. navbar */
 .navbar {
-  transition: background-color 0.3 ease;
+  transition: background-color 0.3s ease;
   padding: 16px 0;
 }
 
@@ -30,30 +30,200 @@ body {
   color: #ffc107 !important;
 }
 
-/* 3. section home(hero) */
-#home h1 {
-  font-size: 3grem;
-  line-height: 1.2;
+/* 3. section home (hero) - retro game style */
+#home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F5F1E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-#home p.lead {
-  font-size: 1.2rem;
-  color: #ccc;
+.bg-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  z-index: 1;
+  overflow: hidden;
+  margin: 250px;
 }
 
-#home .btn {
-  padding: 12px 32px;
-  font-weight: 600;
-  border-radius: 50px;
-  transition:
-    transform 0.2s ease,
-    box-shodow 0.2s ease;
+.marquee-row {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-#home .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+.marquee-track {
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #C8C3B5;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
 }
+
+.track-right {
+  animation: scrollRight 20s linear infinite;
+}
+
+.track-left {
+  animation: scrollLeft 20s linear infinite;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.title-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 50px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.my-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 22px;
+  color: #FF2A2A;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  animation: blink 1.2s step-end infinite;
+  align-self: flex-start;
+  padding-left: 310px;
+}
+
+.profile-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 100px;
+  color: #FFD400;
+  line-height: 1;
+  text-shadow: 6px 6px 0px #C8A800;
+  text-align: center;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideText {
+  0% {
+    transform: translateX(0px);
+  }
+
+  25% {
+    transform: translateX(20px);
+  }
+
+  50% {
+    transform: translateX(0px);
+  }
+
+  75% {
+    transform: translateX(-20px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.corner {
+  position: absolute;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+}
+
+.corner-tl {
+  top: 20px;
+  left: 20px;
+  border-top: 3px solid #FFD400;
+  border-left: 3px solid #FFD400;
+}
+
+.corner-tr {
+  top: 20px;
+  right: 20px;
+  border-top: 3px solid #FFD400;
+  border-right: 3px solid #FFD400;
+}
+
+.corner-bl {
+  bottom: 20px;
+  left: 20px;
+  border-bottom: 3px solid #FFD400;
+  border-left: 3px solid #FFD400;
+}
+
+.corner-br {
+  bottom: 20px;
+  right: 20px;
+  border-bottom: 3px solid #FFD400;
+  border-right: 3px solid #FFD400;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: repeating-linear-gradient(to bottom,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.025) 3px,
+      rgba(0, 0, 0, 0.025) 4px);
+  pointer-events: none;
+}
+
+.press-start {
+  position: absolute;
+  bottom: 32px;
+  right: 50px;
+  z-index: 3;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: #FF2A2A;
+  letter-spacing: 0.1em;
+  animation: blink 0.8s step-end infinite;
+}
+
+
 
 /* 4. section titles (judul tiap section) */
 section h2 {
@@ -69,7 +239,7 @@ section h2::after {
   content: "";
   position: absolute;
   left: 50%;
-  transform: translateX(-50);
+  transform: translateX(-50%);
   bottom: 0;
   width: 60px;
   height: 4px;
@@ -92,34 +262,34 @@ section h2::after {
 }
 
 /* 6. Section skills */
-#sklills {
+#skills {
   background-color: #f8f9fa;
 }
 
-#skills.card {
+#skills .card {
   border: none;
   border-radius: 16px;
   transition:
     transform 0.3s ease,
-    box-shodow 0.3s ease;
+    box-shadow 0.3s ease;
   cursor: default;
 }
 
 #skills .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0n n12px 30px rgba(0, 0, 0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 #skills .fs-1 {
   font-size: 2.5rem !important;
 }
 
-/* ===== 7. SECTION PROJECTS ===== */
-#projects {
+/* ===== 7. SECTION PROJECT ===== */
+#project {
   background-color: #fff;
 }
 
-#projects .card {
+#project .card {
   border: none;
   border-radius: 16px;
   transition:
@@ -129,28 +299,28 @@ section h2::after {
   /* garis kuning di kiri card */
 }
 
-#projects .card:hover {
+#project .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
-#projects .card-title {
+#project .card-title {
   font-weight: 700;
   font-size: 1.1rem;
 }
 
-#projects .card-text {
+#project .card-text {
   color: #666;
   font-size: 0.95rem;
 }
 
-#projects .btn-outline-dark {
+#project .btn-outline-dark {
   border-radius: 50px;
   font-size: 0.85rem;
   transition: all 0.2s ease;
 }
 
-#projects .btn-outline-dark:hover {
+#project .btn-outline-dark:hover {
   background-color: #ffc107;
   border-color: #ffc107;
   color: #000;
