@@ -14,5 +14,8 @@ function typingEffect() {
     setTimeout(typingEffect, 80);
   }
 }
+function goToContact() {
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+}
 
 typingEffect();
